@@ -1,0 +1,59 @@
+.imageLogo {
+    width: 13vh;
+    height: 6vh;
+    margin: -2vh -1.5vh -1.5vh 0;
+}
+
+body {
+    background: radial-gradient(#5fa5905e, #51879252);
+    background-attachment:fixed;
+    height:100%;
+
+} 
+
+#cardNewCategory {
+    border-radius: 1.5vh;
+}
+
+.whiteTable {
+    background: white;
+    border-radius: 1.5vh;
+}
+
+.mr-autoG {
+    position: relative;
+    right: 170vh;
+    top: 0.4vh;
+}
+
+.bigTd {
+    width: 18vh;
+}
+
+.jumbotron {
+    background: rgba(255, 255, 255, 0.466); 
+    border-radius: 1vh;
+}
+
+.card {
+    border-radius: 1vh;
+}
+
+.homeCards {
+    background: rgba(255, 255, 255, 0.829);
+}
+
+.selectnavbarhome {
+    height: 3vh;
+    border: rgb(160, 160, 160) 1px solid;
+    border-radius: 1vh;
+    position: relative;
+    top: 0.5vh; 
+    padding-left: 0.5vh;
+}
+
+.pcategoria {
+    position: relative;
+    top: 0.8vh;
+    padding-right: 0.5vh; 
+}

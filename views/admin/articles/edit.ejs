@@ -1,0 +1,58 @@
+<%- include("../../partials/header.ejs") %>
+
+<body>
+
+    <%- include("../../partials/navbar.ejs") %>
+
+    <div class="container">
+        <br>
+        <div class="card" id="cardNewCategory">
+            <div class="card-header">
+                <h2>Editando artigo - <%=article.title%></h2>
+            </div>
+      
+            <div class="card-body">
+                <form method="post" action="/admin/article/update" onsubmit="updateDecision(event, this)">
+                    <input class="form-control" type="text" name="title" value="<%=article.title%>"><br>
+                    <input type="hidden" name="id" value="<%=article.id%>">
+                    <textarea class="form-control" value="<%=article.body%>" placeholder="<%=article.body%>" name="body" id="article"><%=article.body%></textarea><br>
+                    <label>Categoria</label>
+                    <select name="category" class="form-control">
+                        <% categories.forEach((category) => { %>
+                            <option value="<%= category.id %>" name="categoryId"><%= category.title %></option>
+                        <% }) %>
+                    </select><br>
+                    <button class="btn btn-success">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<%- include("../../partials/footer.ejs") %>
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>
+    
+    tinymce.init({
+        language: "pt_BR",
+        selector: "#article",
+        plugins: [
+            "advlist", "autolink", "link", "image", "lists", "print", "preview", "hr", 
+            "searchreplace", "wordcount", "fullscreen", "insertdatetime", "media", "save", "table", "paste", "emoticons"
+        ]
+    });
+
+    function updateDecision(event, form) {
+        event.preventDefault();
+        const decision = confirm("Deseja salvar as alterações ? ");
+        if (decision) {
+            form.submit();
+        } else {
+            console.log("Não salvar!")
+        }
+        
+        
+    };
+
+</script>
